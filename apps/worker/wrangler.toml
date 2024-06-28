@@ -1,0 +1,22 @@
+name = "stader-graph-dashboard-worker"
+compatibility_date = "2023-12-01"
+send_metrics = false
+
+# [vars]
+# MY_VAR = "my-variable"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "stader-graph-db"
+database_id = "dede7604-bf77-45c3-abe1-b272f711f6c9"
+
+# [ai]
+# binding = "AI"

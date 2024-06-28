@@ -1,5 +1,19 @@
 {
   "name": "@sgd/worker",
-  "version": "0.1.0",
-  "private": true
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts"
+  },
+  "dependencies": {
+    "graphql": "^16.9.0",
+    "graphql-request": "^7.1.0",
+    "hono": "^4.4.9"
+  },
+  "devDependencies": {
+    "@sgd/eslint-config": "workspace:*",
+    "@sgd/shared": "workspace:*",
+    "@sgd/typescript-config": "workspace:*",
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "wrangler": "^3.57.2"
+  }
 }

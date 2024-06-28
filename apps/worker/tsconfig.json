@@ -1,0 +1,3 @@
+{
+	"extends": "@sgd/typescript-config/worker.json"
+}
