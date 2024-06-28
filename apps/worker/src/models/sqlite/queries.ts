@@ -9,13 +9,14 @@ export const loadAllStatistics = (d1: D1Database) =>
 export const loadAllDataPoints = (d1: D1Database) =>
 	d1.prepare(`
   SELECT
+    Count(*) AS Count,
     GROUP_CONCAT(CreatedAt) AS Timestamps,
     GROUP_CONCAT(DailyTotalValueLockedUSD) AS TotalValueLockedUSDs,
     GROUP_CONCAT(DailyRevenueUSD) AS DailyRevenueUSDs,
     GROUP_CONCAT(DailyProtocolSideRevenueUSD) AS DailyProtocolSideRevenueUSDs,
     GROUP_CONCAT(DailySupplySideRevenueUSD) AS DailySupplySideRevenueUSDs,
     GROUP_CONCAT(CAST(DailyActiveUsers AS TEXT)) AS DailyActiveUsers,
-    GROUP_CONCAT(CAST(DailyTransactionCount AS TEXT)) AS DailyTransactionCounts
+    GROUP_CONCAT(CAST(DailyTransactions AS TEXT)) AS DailyTransactions
   FROM
     DataPoints
   ORDER BY

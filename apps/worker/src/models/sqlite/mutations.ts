@@ -1,11 +1,11 @@
 interface SaveDataPointParams {
-	createdAt: number
-	dailyTotalValueLockedUSD: number
-	dailyRevenueUSD: number
-	dailyProtocolSideRevenueUSD: number
-	dailySupplySideRevenueUSD: number
-	dailyActiveUsersUSD: number
-	dailyTransactionCountUSD: number
+	createdAt: string
+	dailyTotalValueLockedUSD: string
+	dailyRevenueUSD: string
+	dailyProtocolSideRevenueUSD: string
+	dailySupplySideRevenueUSD: string
+	dailyActiveUsers: string
+	dailyTransactions: string
 }
 
 const saveDataPoint = (d1: D1Database, params: SaveDataPointParams) =>
@@ -15,12 +15,12 @@ const saveDataPoint = (d1: D1Database, params: SaveDataPointParams) =>
 			INSERT INTO
 			  DataPoints (
 			    CreatedAt,
-			    DailyTotalValueLocked_USD,
-			    DailyRevenue_USD,
-			    DailyProtocolSideRevenue_USD,
-			    DailySupplySideRevenue_USD,
-			    DailyActiveUsers_USD,
-			    DailyTransactionCount_USD
+			    DailyTotalValueLockedUSD,
+			    DailyRevenueUSD,
+			    DailyProtocolSideRevenueUSD,
+			    DailySupplySideRevenueUSD,
+			    DailyActiveUsers,
+			    DailyTransactions
 			  )
 			VALUES
 			  (
@@ -33,13 +33,13 @@ const saveDataPoint = (d1: D1Database, params: SaveDataPointParams) =>
 			params.dailyRevenueUSD,
 			params.dailyProtocolSideRevenueUSD,
 			params.dailySupplySideRevenueUSD,
-			params.dailyActiveUsersUSD,
-			params.dailyTransactionCountUSD
+			params.dailyActiveUsers,
+			params.dailyTransactions
 		)
 
 interface UpdateTVLParams {
-	lastUpdatedAt: number
-	totalValueLockedUSD: number
+	lastUpdatedAt: string
+	totalValueLockedUSD: string
 }
 
 const updateTVL = (d1: D1Database, params: UpdateTVLParams) =>
@@ -47,18 +47,18 @@ const updateTVL = (d1: D1Database, params: UpdateTVLParams) =>
 		.prepare(
 			`
 			UPDATE
-			  DataPoints
+			  Statistics
 			SET
 			  LastUpdatedAt = ?,
-			  TotalValueLockedUSD = ?
+			  Value = ?
 			WHERE
-			  Name = 'TotalValueLocked';`
+			  Name = 'TotalValueLockedUSD';`
 		)
 		.bind(params.lastUpdatedAt, params.totalValueLockedUSD)
 
 interface UpdateTotalRevenueParams {
-	lastUpdatedAt: number
-	totalRevenueUSD: number
+	lastUpdatedAt: string
+	totalRevenueUSD: string
 }
 
 const updateTotalRevenue = (d1: D1Database, params: UpdateTotalRevenueParams) =>
@@ -66,18 +66,18 @@ const updateTotalRevenue = (d1: D1Database, params: UpdateTotalRevenueParams) =>
 		.prepare(
 			`
 			UPDATE
-			  DataPoints
+			  Statistics
 			SET
 			  LastUpdatedAt = ?,
-			  TotalRevenueUSD = ?
+			  Value = ?
 			WHERE
-			  Name = 'TotalRevenue';`
+			  Name = 'TotalRevenueUSD';`
 		)
 		.bind(params.lastUpdatedAt, params.totalRevenueUSD)
 
 interface UpdateTotalProtocolSideRevenueParams {
-	lastUpdatedAt: number
-	totalProtocolSideRevenueUSD: number
+	lastUpdatedAt: string
+	totalProtocolSideRevenueUSD: string
 }
 const updateTotalProtocolSideRevenue = (
 	d1: D1Database,
@@ -87,18 +87,18 @@ const updateTotalProtocolSideRevenue = (
 		.prepare(
 			`
 			UPDATE
-			  DataPoints
+			  Statistics
 			SET
 			  LastUpdatedAt = ?,
-			  TotalProtocolSideRevenueUSD = ?
+			  Value = ?
 			WHERE
-			  Name = 'TotalProtocolSideRevenue';`
+			  Name = 'TotalProtocolSideRevenueUSD';`
 		)
 		.bind(params.lastUpdatedAt, params.totalProtocolSideRevenueUSD)
 
 interface UpdateTotalSupplySideRevenueParams {
-	lastUpdatedAt: number
-	totalSupplySideRevenueUSD: number
+	lastUpdatedAt: string
+	totalSupplySideRevenueUSD: string
 }
 
 const updateTotalSupplySideRevenue = (
@@ -109,18 +109,18 @@ const updateTotalSupplySideRevenue = (
 		.prepare(
 			`
 			UPDATE
-			  DataPoints
+			  Statistics
 			SET
 			  LastUpdatedAt = ?,
-			  TotalSupplySideRevenueUSD = ?
+			  Value = ?
 			WHERE
-			  Name = 'TotalSupplySideRevenue';`
+			  Name = 'TotalSupplySideRevenueUSD';`
 		)
 		.bind(params.lastUpdatedAt, params.totalSupplySideRevenueUSD)
 
 interface UpdateTotalUniqueUsersParams {
-	lastUpdatedAt: number
-	totalUniqueUsers: number
+	lastUpdatedAt: string
+	totalUniqueUsers: string
 }
 
 const updateTotalUniqueUsers = (
@@ -131,18 +131,18 @@ const updateTotalUniqueUsers = (
 		.prepare(
 			`
 			UPDATE
-			  DataPoints
+			  Statistics
 			SET
 			  LastUpdatedAt = ?,
-			  TotalUniqueUsers = ?
+			  Value = ?
 			WHERE
 			  Name = 'TotalUniqueUsers';`
 		)
 		.bind(params.lastUpdatedAt, params.totalUniqueUsers)
 
 interface UpdateTotalTransactionsParams {
-	lastUpdatedAt: number
-	totalTransactions: number
+	lastUpdatedAt: string
+	totalTransactions: string
 }
 
 const updateTotalTransactions = (
@@ -153,10 +153,10 @@ const updateTotalTransactions = (
 		.prepare(
 			`
 			UPDATE
-			  DataPoints
+			  Statistics
 			SET
 			  LastUpdatedAt = ?,
-			  TotalTransactions = ?
+			  Value = ?
 			WHERE
 			  Name = 'TotalTransactions';`
 		)
@@ -171,6 +171,6 @@ export const statistics = {
 	updateTotalTransactions,
 }
 
-export const datapoints = {
+export const dataPoints = {
 	saveDataPoint,
 }

@@ -25,7 +25,7 @@ CREATE TABLE
     DailySupplySideRevenueUSD REAL NOT NULL,
     -- Usage
     DailyActiveUsers INTEGER NOT NULL,
-    DailyTransactionCount INTEGER NOT NULL
+    DailyTransactions INTEGER NOT NULL
   );
 
 -- SEED
@@ -34,52 +34,36 @@ CREATE TABLE
 INSERT INTO
   Statistics (Name, LastUpdatedAt, Value)
 VALUES
-  (
-    'TotalValueLocked_USD',
-    1719533963,
-    441926804.2038745587013444587
-  );
+  ('TotalValueLockedUSD', 1686750599, 0);
 
 -- Total Revenue
 INSERT INTO
   Statistics (Name, LastUpdatedAt, Value)
 VALUES
-  (
-    'TotalRevenue_USD',
-    1719533963,
-    1373263.923757473733382617525296
-  );
+  ('TotalRevenueUSD', 1686750599, 0);
 
 -- Total Protocol Side Revenue
 INSERT INTO
   Statistics (Name, LastUpdatedAt, Value)
 VALUES
-  (
-    'TotalProtocolSideRevenue_USD',
-    1719533963,
-    441926804.2038745587013444587
-  );
+  ('TotalProtocolSideRevenueUSD', 1686750599, 0);
 
 -- Total Supply Side Revenue
 INSERT INTO
   Statistics (Name, LastUpdatedAt, Value)
 VALUES
-  (
-    'TotalSupplySideRevenue_USD',
-    1719533963,
-    441926804.2038745587013444587
-  );
+  ('TotalSupplySideRevenueUSD', 1686750599, 0);
 
 -- Usage
 INSERT INTO
   Statistics (Name, LastUpdatedAt, Value)
 VALUES
-  ('TotalUniqueUsers', 1719533963, 25017);
+  ('TotalUniqueUsers', 1686750599, 0);
 
 INSERT INTO
   Statistics (Name, LastUpdatedAt, Value)
 VALUES
-  ('TotalTransactionCount', 1719533963, 31930);
+  ('TotalTransactions', 1686750599, 0);
 
 -- Data Points Seed
 INSERT INTO
@@ -90,39 +74,10 @@ INSERT INTO
     DailyProtocolSideRevenueUSD,
     DailySupplySideRevenueUSD,
     DailyActiveUsers,
-    DailyTransactionCount
+    DailyTransactions
   )
 VALUES
-  (
-    1719533963,
-    441926804.2038745587013444587,
-    18.74474872258322504048783,
-    0,
-    18.74474872258322504048783,
-    19,
-    29
-  );
-
-INSERT INTO
-  DataPoints (
-    CreatedAt,
-    DailyTotalValueLockedUSD,
-    DailyRevenueUSD,
-    DailyProtocolSideRevenueUSD,
-    DailySupplySideRevenueUSD,
-    DailyActiveUsers,
-    DailyTransactionCount
-  )
-VALUES
-  (
-    1719448103,
-    440340251.320534530369422114898591,
-    4913.16197422067930649669537,
-    0,
-    4913.16197422067930649669537,
-    32,
-    42
-  );
+  (1686750599, 0, 0, 0, 0, 0, 0);
 
 -- INDEXES
 CREATE INDEX IF NOT EXISTS idx_statistics_name ON Statistics (Name);

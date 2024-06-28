@@ -1,25 +1,28 @@
-import { DBResponse } from "../typings/database"
+import { DBResult } from "../typings/database"
 
-const query = async <T extends DBResponse>(
+const query = async <T extends DBResult>(
 	d1: D1Database,
 	command: (d1: D1Database) => D1PreparedStatement
 ) => {
 	const { results } = await command(d1).all<T>()
+	if (!results.length) throw new Error("No results found")
 	return results
 }
 
-const mutate = async (
-	d1: D1Database,
-	command: (d1: D1Database) => D1PreparedStatement
-) => {
-	return command(d1).run()
+const mutate = async (statement: D1PreparedStatement) => {
+	const { success } = await statement.run()
+	if (!success) throw new Error("Mutation failed")
+	return success
 }
 
 const batchMutate = async (
 	d1: D1Database,
-	commands: ((d1: D1Database) => D1PreparedStatement)[]
+	statements: D1PreparedStatement[]
 ) => {
-	return d1.batch(commands.map((command) => command(d1)))
+	const batchResults = await d1.batch(statements)
+	const success = batchResults.every((result) => result.success)
+	if (!success) throw new Error("Batch mutation failed")
+	return success
 }
 
 export const database = {

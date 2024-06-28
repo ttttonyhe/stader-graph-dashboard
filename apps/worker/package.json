@@ -2,6 +2,8 @@
   "name": "@sgd/worker",
   "scripts": {
     "dev": "wrangler dev src/index.ts",
+    "seed:local": "wrangler d1 execute stader-graph-db --local --file=./src/models/schema.sql",
+    "seed:remote": "wrangler d1 execute stader-graph-db --local --file=./src/models/schema.sql",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
@@ -10,10 +12,10 @@
     "hono": "^4.4.9"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240620.0",
     "@sgd/eslint-config": "workspace:*",
     "@sgd/shared": "workspace:*",
     "@sgd/typescript-config": "workspace:*",
-    "@cloudflare/workers-types": "^4.20240620.0",
     "wrangler": "^3.57.2"
   }
 }

@@ -1,54 +1,35 @@
-export interface DataPointRecord {
-	ID: number
-	CreatedAt: number
-	DailyTotalValueLockedUSD: number
-	DailyRevenueUSD: number
-	DailyProtocolSideRevenueUSD: number
-	DailySupplySideRevenueUSD: number
-	DailyActiveUsersUSD: number
-	DailyTransactionCountUSD: number
-}
-
-enum StatisticName {
-	TotalValueLocked = "TotalValueLockedUSD",
-	TotalRevenue = "TotalRevenueUSD",
-	TotalProtocolSideRevenue = "TotalProtocolSideRevenueUSD",
-	TotalSupplySideRevenue = "TotalSupplySideRevenueUSD",
+export enum StatisticName {
+	TotalValueLockedUSD = "TotalValueLockedUSD",
+	TotalRevenueUSD = "TotalRevenueUSD",
+	TotalProtocolSideRevenueUSD = "TotalProtocolSideRevenueUSD",
+	TotalSupplySideRevenueUSD = "TotalSupplySideRevenueUSD",
 	TotalUniqueUsers = "TotalUniqueUsers",
 	TotalTransactions = "TotalTransactions",
 }
 
-export type StatisticRecord = {
-	ID: number
-	Name: StatisticName
-	LastUpdatedAt: number
-	Value: number
-}[]
-
-export interface LoadAllDataPointsDBResponse {
-	Timestamps: string[]
-	TotalValueLockedUSDs: string[]
-	DailyRevenueUSDs: string[]
-	DailyProtocolSideRevenueUSDs: string[]
-	DailySupplySideRevenueUSDs: string[]
-	DailyActiveUsers: string[]
-	DailyTransactionCounts: string[]
+export interface LoadAllDataPointsDBResult {
+	Count: string
+	Timestamps: string
+	TotalValueLockedUSDs: string
+	DailyRevenueUSDs: string
+	DailyProtocolSideRevenueUSDs: string
+	DailySupplySideRevenueUSDs: string
+	DailyActiveUsers: string
+	DailyTransactions: string
 }
 
-export type LoadAllStatisticsDBResponse = {
+export type LoadAllStatisticsDBResult = {
 	ID: number
 	Name: StatisticName
 	LastUpdatedAt: number
 	Value: number
-}[]
+}
 
-export type LoadLatestDataPointTimestampDBResponse = [
-	{
-		CreatedAt: number
-	},
-]
+export type LoadLatestDataPointTimestampDBResult = {
+	CreatedAt: number
+}
 
-export type DBResponse =
-	| LoadAllDataPointsDBResponse
-	| LoadAllStatisticsDBResponse
-	| LoadLatestDataPointTimestampDBResponse
+export type DBResult =
+	| LoadAllDataPointsDBResult
+	| LoadAllStatisticsDBResult
+	| LoadLatestDataPointTimestampDBResult

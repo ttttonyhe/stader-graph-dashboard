@@ -1,8 +1,14 @@
-import type { CloudflareEnv } from "../typings"
+import { GraphQLClient } from "graphql-request"
 import { Context } from "hono"
-import { env } from "hono/adapter"
 
 export const d1Client = (c: Context) => {
-	const { DB } = env<CloudflareEnv>(c)
-	return DB
+	return c.env.DB
+}
+
+export const subgraphClient = (c: Context) => {
+	const { SUBGRAPH_API_ENDPOINT } = c.env
+	const client = new GraphQLClient(SUBGRAPH_API_ENDPOINT, {
+		fetch, // Only fetch is supported in edge environments
+	})
+	return client
 }

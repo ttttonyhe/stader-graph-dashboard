@@ -5,6 +5,6 @@ export interface DataPoint {
 	DailyRevenueUSD: number
 	DailyProtocolSideRevenueUSD: number
 	DailySupplySideRevenueUSD: number
-	DailyActiveUsersUSD: number
-	DailyTransactionCountUSD: number
+	DailyActiveUsers: number
+	DailyTransactions: number
 }

@@ -1,0 +1,2 @@
+// <= 1000
+export const DATA_POINTS_RESPONSE_LIMIT = 1000
