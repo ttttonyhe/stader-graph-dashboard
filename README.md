@@ -1,2 +1,2 @@
 # stader-graph-dashboard
-Analytics Dashboard for Stader on ETH Powered by The Graph
+Analytics Dashboard for Stader on ETH powered by The Graph
