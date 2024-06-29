@@ -1,4 +1,4 @@
-name = "stader-graph-dashboard-worker"
+name = "stader-graph-dashboard"
 compatibility_date = "2023-12-01"
 send_metrics = false
 

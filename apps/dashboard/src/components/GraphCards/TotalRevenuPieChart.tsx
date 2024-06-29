@@ -39,8 +39,8 @@ const TotalRevenuePieChart = ({ statistics }: TotalRevenuePieChartProps) => {
 			<h2 className="flex items-center gap-x-2 pl-0.5 text-2xl font-medium text-gray-800">
 				Total Revenue Distribution
 			</h2>
-			<div className="-ml-3">
-				<Pie {...config} />
+			<div className="mb-3 mt-3 min-h-[300px] rounded-2xl bg-gray-100">
+				<Pie {...config} className="-ml-3 -mt-3 bg-white" />
 			</div>
 		</div>
 	)

@@ -19,8 +19,8 @@ const StatisticsCard = ({ statistics }: StatisticsCardProps) => {
 	const number = new Intl.NumberFormat()
 
 	return (
-		<div className="statistics-card-background flex justify-between rounded-3xl border pb-12 pl-12 pr-6 pt-10 tracking-wide shadow-sm">
-			<div className="-mb-2 -mt-2 flex flex-col gap-y-8 border-r border-gray-300 py-4 pr-9">
+		<div className="statistics-card-background flex flex-col justify-between rounded-3xl border pb-12 pl-12 pr-6 pt-10 tracking-wide shadow-sm lg:flex-row">
+			<div className="-mb-2 -mt-2 flex flex-col gap-y-8 border-gray-300 py-4 lg:border-r lg:pr-9">
 				<div className="flex flex-col gap-y-2">
 					<h1 className="flex items-center gap-x-2 pl-0.5 text-xl font-medium text-gray-500">
 						Total Value Locked{" "}
@@ -47,7 +47,7 @@ const StatisticsCard = ({ statistics }: StatisticsCardProps) => {
 					</p>
 				</div>
 			</div>
-			<div className="grid grid-cols-2 grid-rows-2 items-center gap-x-6">
+			<div className="mt-8 grid items-center gap-x-6 gap-y-4 lg:mt-0 lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-0">
 				<div className="flex flex-col gap-y-1">
 					<h2 className="flex items-center gap-x-1 text-lg font-medium text-gray-500">
 						<span className="h-5 w-5">

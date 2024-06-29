@@ -1,3 +1,4 @@
+import ErrorCard from "../components/ErrorCard"
 import DailyActiveUsersLineGraph from "../components/GraphCards/DailyActiveUsersLineGraph"
 import DailyTransactionsBarGraph from "../components/GraphCards/DailyTransactionsBarGraph"
 import DailyUsageBarGraph from "../components/GraphCards/DailyUsageBarGraph"
@@ -7,15 +8,32 @@ import TotalRevenueLineGraph from "../components/GraphCards/TotalRevenueBarGraph
 import TotalRevenueSPBarGraph from "../components/GraphCards/TotalRevenueSPBarGraph"
 import TotalSupplyRevenueBarGraph from "../components/GraphCards/TotalSupplyRevenueBarGraph"
 import TotalValueLockedLineGraph from "../components/GraphCards/TotalValueLockedLineGraph"
+import GraphCardSkeleton from "../components/Skeleton/GraphCard"
+import StatisticsCardSkeleton from "../components/Skeleton/StatisticsCard"
 import StatisticsCard from "../components/StatisticsCard"
 import { useData } from "../hooks"
 
 const Dashboard = () => {
 	const { data, error, isLoading } = useData()
 
-	if (isLoading) return <p className="text-green-600">Loading...</p>
+	if (isLoading)
+		return (
+			<>
+				<section className="mt-8">
+					<StatisticsCardSkeleton />
+				</section>
+				<section className="mt-12">
+					<GraphCardSkeleton />
+				</section>
+			</>
+		)
 
-	if (!data || error) return <p className="text-red-600">{error.message}</p>
+	if (!data || error)
+		return (
+			<section className="mt-8">
+				<ErrorCard message={error?.message || ""} />
+			</section>
+		)
 
 	return (
 		<>
@@ -26,11 +44,11 @@ const Dashboard = () => {
 				<div className="mb-8">
 					<TotalValueLockedLineGraph dataPoints={data.dataPoints} />
 				</div>
-				<div className="mb-8 flex gap-x-8">
-					<div className="flex-2">
+				<div className="mb-8 flex gap-x-8 lg:flex-row flex-col">
+					<div className="lg:flex-2">
 						<TotalRevenuePieChart statistics={data.statistics} />
 					</div>
-					<div className="flex-1">
+					<div className="lg:flex-1">
 						<TotalRevenueSPBarGraph dataPoints={data.dataPoints} />
 					</div>
 				</div>

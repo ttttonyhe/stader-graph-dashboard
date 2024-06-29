@@ -4,7 +4,7 @@
     "dev": "wrangler dev src/index.ts",
     "dev:cron": "wrangler dev src/index.ts --test-scheduled",
     "seed:local": "wrangler d1 execute stader-graph-db --local --file=./src/models/schema.sql",
-    "seed:remote": "wrangler d1 execute stader-graph-db --local --file=./src/models/schema.sql",
+    "seed:remote": "wrangler d1 execute stader-graph-db --remote --file=./src/models/schema.sql",
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {

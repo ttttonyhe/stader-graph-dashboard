@@ -27,6 +27,10 @@
     "@sgd/worker#dev": {
       "cache": false,
       "persistent": true
+    },
+    "@sgd/dashboard#dev": {
+      "cache": false,
+      "persistent": true
     }
   }
 }

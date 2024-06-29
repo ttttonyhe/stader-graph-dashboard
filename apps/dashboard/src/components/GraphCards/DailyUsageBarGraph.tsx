@@ -42,7 +42,7 @@ const DailyUsageBarGraph = ({ dataPoints }: DailyUsageBarGraphProps) => {
 				},
 			},
 		},
-		scale: { color: { range: ['#4338ca', '#eab308'] } },
+		scale: { color: { range: ["#4338ca", "#eab308"] } },
 		axis: {
 			y: { labelFormatter: "~s" },
 			x: {
@@ -72,7 +72,7 @@ const DailyUsageBarGraph = ({ dataPoints }: DailyUsageBarGraphProps) => {
 			<h2 className="flex items-center gap-x-2 pl-0.5 text-2xl font-medium text-gray-800">
 				Daily Usage
 			</h2>
-			<div className="-ml-3">
+			<div className="-ml-3 -mt-3">
 				<DualAxes {...config} />
 			</div>
 		</div>

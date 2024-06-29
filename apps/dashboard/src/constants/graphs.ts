@@ -10,6 +10,7 @@ export const BASE_GRAPH_CONFIG = {
 			rowPadding: 5,
 		},
 	},
+	animate: { enter: { type: "fadeIn" } },
 	style: {
 		radiusTopLeft: 10,
 		radiusTopRight: 10,

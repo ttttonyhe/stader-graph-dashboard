@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev:worker": "turbo run dev --filter=@sgd/worker",
-    "format": "prettier --write \"**/*.{ts,tsx,md,css,scss}\""
+    "dev:dashboard": "turbo run dev --filter=@sgd/dashboard",
+    "format": "prettier --write \"**/*.{ts,tsx,md,scss}\""
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",

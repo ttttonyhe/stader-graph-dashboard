@@ -52,8 +52,8 @@ const TotalValueLockedLineGraph = ({
 				Total Value Locked
 				<span className="text-base font-normal text-gray-500">over time</span>
 			</h2>
-			<div className="-ml-3">
-				<Area {...config} />
+			<div className="mb-3 min-h-[400px] rounded-2xl bg-gray-100">
+				<Area {...config} className="-ml-3 bg-white" />
 			</div>
 		</div>
 	)

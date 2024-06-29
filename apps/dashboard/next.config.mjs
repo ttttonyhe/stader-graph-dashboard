@@ -13,8 +13,9 @@ const nextConfig = {
 		],
 	},
 	experimental: {
-		reactCompiler: false,
+		reactCompiler: true,
 	},
+	transpilePackages: ["@sgd/shared"],
 }
 
 export default nextConfig

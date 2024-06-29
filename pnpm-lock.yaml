@@ -41,6 +41,9 @@ importers:
       react:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522
+      react-content-loader:
+        specifier: ^7.0.2
+        version: 7.0.2(react@19.0.0-rc-f994737d14-20240522)
       react-dom:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
@@ -2795,6 +2798,12 @@ packages:
 
   rbush@3.0.1:
     resolution: {integrity: sha512-XRaVO0YecOpEuIvbhbpTrZgoiI6xBlz6hnlr6EHhd+0x9ase6EmeN+hdwwUaJvLcsFFQ8iWVF1GAK1yB0BWi0w==}
+
+  react-content-loader@7.0.2:
+    resolution: {integrity: sha512-773S98JTyC8VB2nu7LXUhpHx8tZMieGxMcx3qTe7IkohT6Br7d9AXnIXs/wQ6IhlUdKQcw6JLKk1QKigYCWDRA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16.0.0'
 
   react-dom@19.0.0-rc-f994737d14-20240522:
     resolution: {integrity: sha512-J4CsfTSptPKkhaPbaR6n/KohQiHZTrRZ8GL4H8rbAqN/Qpy69g2MIoLBr5/PUX21ye6JxC1ZRWJFna7Xdg1pdA==}
@@ -6398,6 +6407,10 @@ snapshots:
   rbush@3.0.1:
     dependencies:
       quickselect: 2.0.0
+
+  react-content-loader@7.0.2(react@19.0.0-rc-f994737d14-20240522):
+    dependencies:
+      react: 19.0.0-rc-f994737d14-20240522
 
   react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522):
     dependencies:
