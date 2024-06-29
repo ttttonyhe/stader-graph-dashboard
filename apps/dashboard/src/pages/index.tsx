@@ -18,22 +18,23 @@ const Dashboard = () => {
 
 	if (isLoading)
 		return (
-			<>
+			<div className="opacity-0 lg:opacity-100">
 				<section className="mt-8">
 					<StatisticsCardSkeleton />
 				</section>
 				<section className="mt-12">
 					<GraphCardSkeleton />
 				</section>
-			</>
+			</div>
 		)
 
-	if (!data || error)
+	if (!data || error) {
 		return (
 			<section className="mt-8">
 				<ErrorCard message={error?.message || ""} />
 			</section>
 		)
+	}
 
 	return (
 		<>
