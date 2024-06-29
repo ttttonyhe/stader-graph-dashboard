@@ -20,6 +20,8 @@ Our architectural design overview is shown below:
 
 ![Stader Graph Dashboard](https://static.ouorz.com/stader-graph-dashboard-architecture-overview.jpg)
 
+Coloured arrows indicate flow of data.
+
 <br />
 
 ## Subgraph
@@ -62,3 +64,9 @@ SGD uses [Turborepo](https://turbo.build/repo) for monorepo management, [PNPM](h
 - `@sgd/shared` package contains constants and utilities shared between apps
 - `@sgd/eslint-config` package contains ESLint configs for different apps
 - `@sgd/typescript-config` package contains TypeScript configs used in different apps
+
+<br />
+
+## Introduction to Stader
+
+Stader is a cutting-edge liquid restaking platform designed to enhance the staking experience in the decentralized finance (DeFi) ecosystem. By allowing users to restake their assets seamlessly, Stader maximizes yield opportunities while maintaining liquidity. It offers a secure and user-friendly interface for managing staking activities, providing detailed metrics and insights to help users make informed decisions. Stader’s innovative approach ensures optimal returns and flexibility, making it an essential tool for both novice and experienced stakers in the DeFi space.
