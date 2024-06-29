@@ -11,13 +11,13 @@ const Column = dynamic(
 	}
 )
 
-interface TotalSupplyRevenueLineGraphProps {
+interface TotalSupplyRevenueBarGraphProps {
 	dataPoints: SubgraphData["dataPoints"]
 }
 
 const TotalSupplyRevenueBarGraph = ({
 	dataPoints,
-}: TotalSupplyRevenueLineGraphProps) => {
+}: TotalSupplyRevenueBarGraphProps) => {
 	const data = aggregateTotalSupplyRevenueBar(dataPoints)
 
 	const config = {

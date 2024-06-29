@@ -20,8 +20,6 @@ const TotalRevenueSPBarGraph = ({
 }: TotalRevenueSPBarGraphProps) => {
 	const data = aggregateTotalRevenueSPBar(dataPoints)
 
-	console.log(data.length)
-
 	const config = {
 		...BASE_GRAPH_CONFIG,
 		data: data,

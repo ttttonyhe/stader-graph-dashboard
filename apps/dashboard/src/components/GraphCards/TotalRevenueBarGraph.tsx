@@ -11,11 +11,11 @@ const Column = dynamic(
 	}
 )
 
-interface TotalRevenueLineGraphProps {
+interface TotalRevenueBarGraphProps {
 	dataPoints: SubgraphData["dataPoints"]
 }
 
-const TotalRevenueBarGraph = ({ dataPoints }: TotalRevenueLineGraphProps) => {
+const TotalRevenueBarGraph = ({ dataPoints }: TotalRevenueBarGraphProps) => {
 	const data = aggregateTotalRevenueBar(dataPoints)
 
 	const config = {

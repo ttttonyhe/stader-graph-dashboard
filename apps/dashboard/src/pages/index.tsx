@@ -1,3 +1,4 @@
+import AboutCard from "../components/AboutCard"
 import ErrorCard from "../components/ErrorCard"
 import DailyActiveUsersLineGraph from "../components/GraphCards/DailyActiveUsersLineGraph"
 import DailyTransactionsBarGraph from "../components/GraphCards/DailyTransactionsBarGraph"
@@ -8,6 +9,7 @@ import TotalRevenueLineGraph from "../components/GraphCards/TotalRevenueBarGraph
 import TotalRevenueSPBarGraph from "../components/GraphCards/TotalRevenueSPBarGraph"
 import TotalSupplyRevenueBarGraph from "../components/GraphCards/TotalSupplyRevenueBarGraph"
 import TotalValueLockedLineGraph from "../components/GraphCards/TotalValueLockedLineGraph"
+import Loader from "../components/Loader"
 import GraphCardSkeleton from "../components/Skeleton/GraphCard"
 import StatisticsCardSkeleton from "../components/Skeleton/StatisticsCard"
 import StatisticsCard from "../components/StatisticsCard"
@@ -18,14 +20,19 @@ const Dashboard = () => {
 
 	if (isLoading)
 		return (
-			<div className="opacity-0 lg:opacity-100">
-				<section className="mt-8">
-					<StatisticsCardSkeleton />
-				</section>
-				<section className="mt-12">
-					<GraphCardSkeleton />
-				</section>
-			</div>
+			<>
+				<div className="hidden flex-col lg:flex">
+					<section className="mt-8">
+						<StatisticsCardSkeleton />
+					</section>
+					<section className="mt-12">
+						<GraphCardSkeleton />
+					</section>
+				</div>
+				<div className="flex translate-y-8 items-center justify-center lg:hidden">
+					<Loader />
+				</div>
+			</>
 		)
 
 	if (!data || error) {
@@ -41,11 +48,11 @@ const Dashboard = () => {
 			<section className="mt-8">
 				<StatisticsCard statistics={data.statistics} />
 			</section>
-			<section className="mt-12">
+			<section className="mb-12 mt-12">
 				<div className="mb-8">
 					<TotalValueLockedLineGraph dataPoints={data.dataPoints} />
 				</div>
-				<div className="mb-8 flex flex-col gap-x-8 lg:flex-row">
+				<div className="mb-8 flex flex-col gap-8 lg:flex-row">
 					<div className="lg:flex-2">
 						<TotalRevenuePieChart statistics={data.statistics} />
 					</div>
@@ -57,7 +64,7 @@ const Dashboard = () => {
 					<DailyUsageBarGraph dataPoints={data.dataPoints} />
 				</div>
 				<div className="mb-8 text-center">
-					<h1 className="inline-block border-b border-gray-300 px-3 pb-2 text-4xl font-medium">
+					<h1 className="inline-block border-b border-gray-300 pb-2 text-4xl font-medium">
 						Revenue
 					</h1>
 				</div>
@@ -67,14 +74,17 @@ const Dashboard = () => {
 					<TotalSupplyRevenueBarGraph dataPoints={data.dataPoints} />
 				</div>
 				<div className="mb-8 text-center">
-					<h1 className="inline-block border-b border-gray-300 px-3 pb-2 text-4xl font-medium">
+					<h1 className="inline-block border-b border-gray-300 pb-2 text-4xl font-medium">
 						Usage
 					</h1>
 				</div>
-				<div className="mb-16 flex flex-col gap-y-8">
+				<div className="mb-8 flex flex-col gap-y-8">
 					<DailyActiveUsersLineGraph dataPoints={data.dataPoints} />
 					<DailyTransactionsBarGraph dataPoints={data.dataPoints} />
 				</div>
+			</section>
+			<section className="mb-16">
+				<AboutCard />
 			</section>
 		</>
 	)

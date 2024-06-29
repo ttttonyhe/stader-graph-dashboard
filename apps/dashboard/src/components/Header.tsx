@@ -1,5 +1,6 @@
 import staderIcon from "../../public/stader-icon.svg"
 import theGraphIcon from "../../public/the-graph-icon.svg"
+import LiveLabel from "./LiveLabel"
 import Image from "next/image"
 
 const Header = () => {
@@ -18,12 +19,7 @@ const Header = () => {
 				</h1>
 				<span className="-mt-1 text-3xl text-gray-300">/</span>
 				<h1 className="text-2xl text-gray-600">Dashboard</h1>
-				<div className="group flex cursor-pointer items-center gap-x-1.5 text-sm font-normal text-gray-400">
-					<label className="ml-0.5 mt-0.5 h-2.5 w-2.5 cursor-pointer rounded-full bg-green-500 transition-colors hover:bg-green-400" />
-					<p className="mt-px h-0 w-0 overflow-hidden opacity-0 transition-opacity group-hover:h-fit group-hover:w-fit group-hover:opacity-100">
-						Updates every 24 hours
-					</p>
-				</div>
+				<LiveLabel />
 			</div>
 			<div className="mt-0.5 flex items-center justify-center gap-x-1 rounded-full border bg-gray-100 px-3 py-1 pr-1.5 text-sm text-gray-500">
 				<h2>Powered by</h2>

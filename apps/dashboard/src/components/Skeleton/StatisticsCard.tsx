@@ -9,6 +9,7 @@ const StatisticsCardSkeleton = () => {
 			viewBox="0 0 992 334"
 			backgroundColor="#f3f3f3"
 			foregroundColor="#ecebeb"
+			uniqueKey="statistics-card-skeleton"
 			className="rounded-3xl border shadow-sm">
 			<rect x="48" y="40" rx="10" ry="10" width="300" height="30" />
 			<rect x="48" y="85" rx="10" ry="10" width="200" height="45" />

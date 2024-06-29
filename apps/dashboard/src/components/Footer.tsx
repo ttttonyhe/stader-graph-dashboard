@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className="mb-16 flex items-center justify-between border-t-2 border-gray-200 pt-2 text-gray-500">
+		<footer className="mb-16 flex flex-col items-center justify-between gap-2 whitespace-nowrap border-t-2 border-gray-200 px-1 pt-2 text-gray-500 lg:flex-row">
 			<p className="flex items-start gap-x-2">
 				<span>&copy;{new Date().getFullYear()} Tony He</span>
 				<span>·</span>

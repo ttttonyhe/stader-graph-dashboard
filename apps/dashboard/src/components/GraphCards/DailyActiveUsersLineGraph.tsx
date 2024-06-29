@@ -1,5 +1,5 @@
 import { BASE_GRAPH_CONFIG } from "../../constants"
-import { DAULineGraphDataFields } from "../../typings"
+import { DAULineGraphDataRow, DAULineGraphDataFields } from "../../typings"
 import { aggregateDailyActiveUsers } from "../../utilities"
 import { SubgraphData } from "@sgd/shared"
 import dynamic from "next/dynamic"
@@ -26,6 +26,10 @@ const DailyActiveUsersLineGraph = ({
 		xField: DAULineGraphDataFields.DATE,
 		yField: DAULineGraphDataFields.ACTIVE_USERS,
 		legend: { size: false },
+		tooltip: {
+			title: (d: DAULineGraphDataRow) =>
+				new Date(d[DAULineGraphDataFields.DATE]).toLocaleString(),
+		},
 		axis: {
 			y: { labelFormatter: "~s" },
 			x: {

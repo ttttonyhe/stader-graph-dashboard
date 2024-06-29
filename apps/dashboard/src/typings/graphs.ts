@@ -32,7 +32,7 @@ export type TRPieChartData = TRPieChartDataRow[]
 // Total Revenue bar graph
 export enum TRBarGraphDataFields {
 	DATE = "date",
-	REVENUE = "revenue",
+	REVENUE = "Revenue",
 }
 
 export interface TRBarGraphDataRow {
@@ -51,7 +51,7 @@ export enum TRSPBarGraphDataTypes {
 export enum TRSPBarGraphDataFields {
 	DATE = "date",
 	TYPE = "type",
-	REVENUE = "revenue",
+	REVENUE = "Revenue",
 }
 
 export interface TRSPBarGraphDataRow {
@@ -65,7 +65,7 @@ export type TRSPBarGraphData = TRSPBarGraphDataRow[]
 // Total Protocol Side Revenue bar graph
 export enum TPRBarGraphDataFields {
 	DATE = "date",
-	REVENUE = "revenue",
+	REVENUE = "Revenue",
 }
 
 export interface TPRBarGraphDataRow {
@@ -78,7 +78,7 @@ export type TPRBarGraphData = TPRBarGraphDataRow[]
 // Total Supply Side Revenue line graph
 export enum TSRBarGraphDataFields {
 	DATE = "date",
-	REVENUE = "revenue",
+	REVENUE = "Revenue",
 }
 
 export interface TSRBarGraphDataRow {
