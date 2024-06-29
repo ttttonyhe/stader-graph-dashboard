@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const Header = () => {
 	return (
-		<header className="fixed left-0 top-0 z-50 mt-0 flex w-full items-center justify-between gap-x-3 border-b-2 border-gray-200 bg-white px-3 pb-4 pt-5 lg:relative lg:mt-8 lg:px-0 lg:pb-3.5 lg:pr-1 lg:pt-0">
+		<header className="fixed left-0 top-0 z-50 mt-0 flex w-full flex-col items-center justify-between gap-3 border-b-2 border-gray-200 bg-white px-3 pb-4 pt-4 lg:relative lg:mt-8 lg:flex-row lg:px-0 lg:pb-3.5 lg:pr-1 lg:pt-0">
 			<div className="flex items-center gap-x-2.5">
 				<h1 className="flex items-center gap-x-1 text-3xl font-medium">
 					<Image
@@ -21,7 +21,7 @@ const Header = () => {
 				<h1 className="text-2xl text-gray-600">Dashboard</h1>
 				<LiveLabel />
 			</div>
-			<div className="mt-0.5 flex items-center justify-center gap-x-1 rounded-full border bg-gray-100 px-3 py-1 pr-1.5 text-sm text-gray-500">
+			<div className="mt-0.5 hidden items-center justify-center gap-x-1 rounded-full border bg-gray-100 px-3 py-1 pr-1.5 text-sm text-gray-500 lg:flex">
 				<h2>Powered by</h2>
 				<div className="flex items-center justify-center rounded-full bg-[#6F4CFF]/80 py-1 pl-1.5 pr-2 transition-colors hover:bg-[#6F4CFF]/90">
 					<a

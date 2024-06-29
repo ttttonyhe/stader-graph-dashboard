@@ -2,5 +2,10 @@
 	background-image: url("/statistics-card-bg.jpg");
 	background-position: 50% 30%;
 	background-repeat: no-repeat;
-	background-size: 600%;
+
+	@media (min-width: 1024px) {
+		background-size: 600%;
+	}
+
+	@apply bg-cover;
 }
