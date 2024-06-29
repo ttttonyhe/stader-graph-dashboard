@@ -14,3 +14,6 @@ database_id = "dede7604-bf77-45c3-abe1-b272f711f6c9"
 # Sync database with subgraph every day at 00:01
 [triggers]
 crons = ["1 0 * * *"]
+
+[placement]
+mode = "smart"
