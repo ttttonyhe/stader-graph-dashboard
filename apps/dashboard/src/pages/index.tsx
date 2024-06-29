@@ -44,7 +44,7 @@ const Dashboard = () => {
 				<div className="mb-8">
 					<TotalValueLockedLineGraph dataPoints={data.dataPoints} />
 				</div>
-				<div className="mb-8 flex gap-x-8 lg:flex-row flex-col">
+				<div className="mb-8 flex flex-col gap-x-8 lg:flex-row">
 					<div className="lg:flex-2">
 						<TotalRevenuePieChart statistics={data.statistics} />
 					</div>
