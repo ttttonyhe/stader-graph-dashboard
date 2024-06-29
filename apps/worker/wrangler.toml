@@ -10,3 +10,7 @@ DATA_CACHE_NAME = "stader-graph-dashboard-worker-cache"
 binding = "DB"
 database_name = "stader-graph-db"
 database_id = "dede7604-bf77-45c3-abe1-b272f711f6c9"
+
+# Sync database with subgraph every day at 00:01
+[triggers]
+crons = ["1 0 * * *"]

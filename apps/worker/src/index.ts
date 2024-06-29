@@ -1,6 +1,8 @@
 import { getDataHandler, postManualSyncHandler } from "./controllers"
+import { syncSubgraphData } from "./services/syncSubgraphData"
 import { CloudflareEnv } from "./typings"
 import { CORS_ALLOWLIST, GET, POST } from "@sgd/shared"
+import { GraphQLClient } from "graphql-request"
 import { Context, Hono } from "hono"
 import { basicAuth } from "hono/basic-auth"
 import { cache } from "hono/cache"
@@ -79,4 +81,20 @@ app.onError(async (err, c) => {
 	return c.json({ message: "error", error: "Unknown" })
 })
 
-export default app
+export default {
+	// Cron jobs to sync database with subgraph every 24 hours
+	scheduled(_event: ScheduledEvent, env: CloudflareEnv, ctx: ExecutionContext) {
+		const delayedProcessing = async () => {
+			const graphql = new GraphQLClient(env.SUBGRAPH_API_ENDPOINT, {
+				fetch,
+			})
+			const res = await syncSubgraphData(env.DB, graphql)
+			console.log("Synced data with subgraph:", res)
+		}
+		ctx.waitUntil(delayedProcessing())
+	},
+	// Handle incoming requests
+	fetch(request: Request, env: CloudflareEnv, ctx: ExecutionContext) {
+		return app.fetch(request, env, ctx)
+	},
+}
