@@ -22,11 +22,11 @@
     "strict": true,
     "target": "ES2022",
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
       "@sgd/shared": [
         "../../packages/shared"
+      ],
+      "@sgd/worker": [
+        "../../apps/worker"
       ]
     }
   }

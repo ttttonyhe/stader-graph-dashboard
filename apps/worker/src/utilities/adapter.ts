@@ -6,8 +6,7 @@ export const d1Client = (c: Context) => {
 }
 
 export const subgraphClient = (c: Context) => {
-	const { SUBGRAPH_API_ENDPOINT } = c.env
-	const client = new GraphQLClient(SUBGRAPH_API_ENDPOINT, {
+	const client = new GraphQLClient(c.env.SUBGRAPH_API_ENDPOINT, {
 		fetch, // Only fetch is supported in edge environments
 	})
 	return client

@@ -135,3 +135,4 @@ dist
 
 .turbo
 .wrangler
+.dev.vars

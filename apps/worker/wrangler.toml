@@ -2,6 +2,10 @@ name = "stader-graph-dashboard-worker"
 compatibility_date = "2023-12-01"
 send_metrics = false
 
+[vars]
+DATA_CACHE_ENABLED = false
+DATA_CACHE_NAME = "stader-graph-dashboard-worker-cache"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "stader-graph-db"

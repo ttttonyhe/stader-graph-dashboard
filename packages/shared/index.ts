@@ -1,2 +1,2 @@
 export * from "./subgraph"
-export * from "./response"
+export * from "./api"

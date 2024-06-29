@@ -5,29 +5,7 @@ import {
 	StatisticName,
 } from "../typings/database"
 import { database } from "../utilities"
-
-interface SubgraphData {
-	statistics: {
-		TotalValueLockedUSD: number
-		TotalRevenueUSD: number
-		TotalProtocolSideRevenueUSD: number
-		TotalSupplySideRevenueUSD: number
-		TotalUniqueUsers: number
-		TotalTransactions: number
-	}
-	dataPoints: {
-		count: number
-		collections: {
-			timestamps: Date[]
-			totalValueLockedUSDs: number[]
-			dailyRevenueUSDs: number[]
-			dailyProtocolSideRevenueUSDs: number[]
-			dailySupplySideRevenueUSDs: number[]
-			dailyActiveUsers: number[]
-			dailyTransactions: number[]
-		}
-	}
-}
+import { SubgraphData } from "@sgd/shared"
 
 export const loadSubgraphData = async (d1: D1Database) => {
 	const res = {
