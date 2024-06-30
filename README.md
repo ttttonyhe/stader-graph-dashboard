@@ -12,6 +12,35 @@ Analytics Dashboard for [_Stader on ETH_](https://www.staderlabs.com) powered by
 
 <br />
 
+## Project Sustainability
+
+This project follows industry standard practices for designing reusable, maintainable and scalable web software. **This means that SGD can be easily extended or used as a template for building analytics dashboard for other subgraphs on The Graph.** Some of the design patterns we follow are:
+
+- Worker ([Edge Compute](https://workers.cloudflare.com))
+  - Model-View-Controller-Service (MVCS)
+  - Factory
+  - Middleware
+  - D1 Database (SQLite)
+  - CRON
+- Dashboard
+  - stale-while-revalidate ([HTTP RFC 5861](https://datatracker.ietf.org/doc/html/rfc5861))
+  - Atomic CSS ([_Challenging CSS Best Practices_](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach))
+
+SGD uses the latest and greatest technology from the open-source community to implement its functionality:
+
+- Turborepo
+  - Turbopack
+- Hono
+  - [`graphql-request`](https://github.com/jasonkuhrt/graphql-request)
+- Next.js
+  - Pages router
+  - React compiler
+  - TailwindCSS
+  - Ant Design Charts
+  - [`react-content-loader`](https://github.com/danilowoz/react-content-loader)
+
+<br />
+
 ## Architecture Overview
 
 To optimize query performance and reduce GraphQL data request overhead, we utilized Cloudflare Workers to implement a lightweight caching layer between the [Stader Subgraph](https://thegraph.com/explorer/subgraphs/2RLAUqUMvGGFygtuJfmTyeo62zFSJswDZSRMTcu28fSa) and our data visualization dashboard.
