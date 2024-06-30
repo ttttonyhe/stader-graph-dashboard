@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const Header = () => {
 	return (
-		<header className="fixed left-0 top-0 z-50 mt-0 flex w-full flex-col items-center justify-between gap-3 border-b-2 border-gray-200 bg-white px-3 pb-2.5 pt-2.5 lg:relative lg:mt-8 lg:flex-row lg:px-0 lg:pb-3.5 lg:pr-1 lg:pt-0">
+		<header className="fixed left-0 top-0 z-50 mt-0 flex w-full select-none flex-col items-center justify-between gap-3 border-b-2 border-gray-200 bg-white px-3 pb-2.5 pt-2.5 lg:relative lg:mt-8 lg:flex-row lg:px-0 lg:pb-3.5 lg:pr-1 lg:pt-0">
 			<div className="flex items-center gap-x-2.5">
 				<h1 className="flex items-center gap-x-1 text-2xl font-medium lg:text-3xl">
 					<Image

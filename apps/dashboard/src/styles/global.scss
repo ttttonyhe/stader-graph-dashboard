@@ -9,3 +9,9 @@
 
 	@apply bg-cover;
 }
+
+h1,
+h2,
+h3 {
+	@apply select-none;
+}

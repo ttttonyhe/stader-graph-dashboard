@@ -63,22 +63,22 @@ const Dashboard = () => {
 				<div className="mb-16">
 					<DailyUsageBarGraph dataPoints={data.dataPoints} />
 				</div>
-				<div className="mb-8 text-center">
-					<h1 className="inline-block border-b border-gray-300 pb-2 text-4xl font-medium">
+				<div className="mx-11 mb-8 border-b-2 border-gray-300 pl-1">
+					<h1 className="pb-2 text-xl font-medium text-gray-600 lg:text-2xl">
 						Revenue
 					</h1>
 				</div>
-				<div className="mb-16 flex flex-col gap-y-8">
+				<div className="mb-16 flex flex-col gap-y-8 px-3">
 					<TotalRevenueLineGraph dataPoints={data.dataPoints} />
 					<TotalProtocolRevenueBarGraph dataPoints={data.dataPoints} />
 					<TotalSupplyRevenueBarGraph dataPoints={data.dataPoints} />
 				</div>
-				<div className="mb-8 text-center">
-					<h1 className="inline-block border-b border-gray-300 pb-2 text-4xl font-medium">
+				<div className="mx-11 mb-8 border-b-2 border-gray-300 pl-1">
+					<h1 className="pb-2 text-xl font-medium text-gray-600 lg:text-2xl">
 						Usage
 					</h1>
 				</div>
-				<div className="mb-8 flex flex-col gap-y-8">
+				<div className="mb-8 flex flex-col gap-y-8 px-3">
 					<DailyActiveUsersLineGraph dataPoints={data.dataPoints} />
 					<DailyTransactionsBarGraph dataPoints={data.dataPoints} />
 				</div>
