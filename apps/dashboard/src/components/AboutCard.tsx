@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const AboutCard = () => {
 	return (
-		<div className="flex flex-col justify-between gap-3.5 rounded-3xl border p-4 px-6 py-6 shadow-sm lg:flex-row lg:py-4">
+		<div className="flex flex-col justify-between gap-3.5 rounded-3xl border bg-white p-4 px-6 py-6 shadow-sm lg:flex-row lg:py-4">
 			<h2 className="flex items-center justify-between gap-x-3.5 pl-0.5 text-xl font-medium leading-5 text-gray-800">
 				<Image
 					src={subgraphLogo}

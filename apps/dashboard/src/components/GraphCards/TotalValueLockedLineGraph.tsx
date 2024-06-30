@@ -48,7 +48,7 @@ const TotalValueLockedLineGraph = ({
 	}
 
 	return (
-		<div className="flex flex-col justify-center gap-y-3 rounded-3xl border p-8 pb-2.5 shadow-sm">
+		<div className="flex flex-col justify-center gap-y-3 rounded-3xl border bg-white p-8 pb-2.5 shadow-sm">
 			<h2 className="flex items-center justify-between gap-x-2 pl-0.5 text-2xl font-medium text-gray-800">
 				Total Value Locked
 				<span className="text-base font-normal text-gray-500">over time</span>

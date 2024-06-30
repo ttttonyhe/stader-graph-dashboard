@@ -29,7 +29,7 @@ const Document = () => {
 				as="fetch"
 				crossOrigin="anonymous"
 			/>
-			<body>
+			<body className="bg-slate-50">
 				<Main />
 				<NextScript />
 			</body>

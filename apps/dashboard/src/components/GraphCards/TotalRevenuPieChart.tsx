@@ -35,7 +35,7 @@ const TotalRevenuePieChart = ({ statistics }: TotalRevenuePieChartProps) => {
 	}
 
 	return (
-		<div className="flex flex-col justify-center rounded-3xl border p-8 pb-2.5 shadow-sm">
+		<div className="flex flex-col justify-center rounded-3xl border bg-white p-8 pb-2.5 shadow-sm">
 			<h2 className="flex items-center gap-x-2 pl-0.5 text-2xl font-medium text-gray-800">
 				Total Revenue Distribution
 			</h2>
