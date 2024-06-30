@@ -19,7 +19,7 @@ const StatisticsCard = ({ statistics }: StatisticsCardProps) => {
 	const number = new Intl.NumberFormat()
 
 	return (
-		<div className="statistics-card-background flex flex-col justify-between overflow-hidden rounded-3xl border pb-12 pl-8 pr-8 pt-10 tracking-wide shadow-sm lg:flex-row lg:pl-12 lg:pr-6">
+		<div className="statistics-card-background flex flex-col justify-between overflow-hidden rounded-3xl border bg-white pb-12 pl-8 pr-8 pt-10 tracking-wide shadow-sm lg:flex-row lg:pl-12 lg:pr-6">
 			<div className="-mb-2 -mt-2 flex flex-col gap-y-8 border-gray-300 py-4 lg:border-r lg:pr-9">
 				<div className="flex flex-col gap-y-2">
 					<h1 className="flex items-center gap-x-2 pl-0.5 text-lg font-medium text-gray-500 lg:text-xl">
