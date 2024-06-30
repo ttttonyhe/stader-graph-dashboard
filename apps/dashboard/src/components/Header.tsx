@@ -7,7 +7,7 @@ const Header = () => {
 	return (
 		<header className="fixed left-0 top-0 z-50 mt-0 flex w-full flex-col items-center justify-between gap-3 border-b-2 border-gray-200 bg-white px-3 pb-2.5 pt-2.5 lg:relative lg:mt-8 lg:flex-row lg:px-0 lg:pb-3.5 lg:pr-1 lg:pt-0">
 			<div className="flex items-center gap-x-2.5">
-				<h1 className="flex items-center gap-x-1 lg:text-3xl text-2xl font-medium">
+				<h1 className="flex items-center gap-x-1 text-2xl font-medium lg:text-3xl">
 					<Image
 						src={staderIcon}
 						alt="stader-icon"
@@ -17,8 +17,8 @@ const Header = () => {
 					/>
 					<span>Stader</span>
 				</h1>
-				<span className="-mt-1 lg:text-3xl text-2xl text-gray-300">/</span>
-				<h1 className="lg:text-2xl text-xl text-gray-600">Dashboard</h1>
+				<span className="-mt-1 text-2xl text-gray-300 lg:text-3xl">/</span>
+				<h1 className="text-xl text-gray-600 lg:text-2xl">Dashboard</h1>
 				<LiveLabel />
 			</div>
 			<div className="mt-0.5 hidden items-center justify-center gap-x-1 rounded-full border bg-gray-100 px-3 py-1 pr-1.5 text-sm text-gray-500 lg:flex">
