@@ -44,6 +44,7 @@ const TotalValueLockedLineGraph = ({
 		style: {
 			fill: "linear-gradient(-90deg, white 0%, darkgreen 100%)",
 		},
+		animate: { enter: { type: "scaleInY" } },
 	}
 
 	return (
