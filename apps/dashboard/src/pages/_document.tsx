@@ -29,6 +29,11 @@ const Document = () => {
 				as="fetch"
 				crossOrigin="anonymous"
 			/>
+			{/* Web analytics */}
+			<script
+				defer
+				src="https://static.cloudflareinsights.com/beacon.min.js"
+				data-cf-beacon='{"token": "2aa53de280b4464184a1dc307754e42e"}'></script>
 			<body className="bg-slate-50">
 				<Main />
 				<NextScript />

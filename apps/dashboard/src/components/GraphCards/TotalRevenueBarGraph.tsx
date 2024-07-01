@@ -38,7 +38,7 @@ const TotalRevenueBarGraph = ({ dataPoints }: TotalRevenueBarGraphProps) => {
 		},
 		slider: {
 			x: {
-				formatter: (text: string) => new Date(text).toLocaleDateString(),
+				formatter: (_text: string) => "",
 				style: {
 					selectionFill: "#f1f2f3",
 				},

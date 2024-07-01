@@ -25,6 +25,7 @@ This project follows industry standard practices for designing reusable, maintai
 - Dashboard
   - stale-while-revalidate ([HTTP RFC 5861](https://datatracker.ietf.org/doc/html/rfc5861))
   - Atomic CSS ([_Challenging CSS Best Practices_](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach))
+  - Cloudflare Web Analytics (Privacy-preserving website analytics)
 
 SGD uses the latest and greatest technology from the open-source community to implement its functionality:
 
