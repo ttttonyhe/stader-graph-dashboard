@@ -1,5 +1,6 @@
 import { WORKER_API_URL } from "@sgd/shared"
 import { Html, Head, Main, NextScript } from "next/document"
+import Script from "next/script"
 
 const Document = () => {
 	return (
@@ -11,7 +12,7 @@ const Document = () => {
 			/>
 			<meta
 				name="keywords"
-				content="Stader, The Graph, Ethereum, Analytics, Dashboard"
+				content="Stader, Stader Restaking, Stader Ethereum, The Graph, Ethereum, Analytics, Dashboard"
 			/>
 			<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 			<link
@@ -30,10 +31,10 @@ const Document = () => {
 				crossOrigin="anonymous"
 			/>
 			{/* Web analytics */}
-			<script
+			<Script
 				defer
 				src="https://static.cloudflareinsights.com/beacon.min.js"
-				data-cf-beacon='{"token": "2aa53de280b4464184a1dc307754e42e"}'></script>
+				data-cf-beacon='{"token": "2aa53de280b4464184a1dc307754e42e"}'></Script>
 			<body className="bg-slate-50">
 				<Main />
 				<NextScript />
