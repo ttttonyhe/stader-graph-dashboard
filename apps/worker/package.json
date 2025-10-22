@@ -10,7 +10,7 @@
   "dependencies": {
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
-    "hono": "^4.4.9"
+    "hono": "^4.10.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240620.0",
