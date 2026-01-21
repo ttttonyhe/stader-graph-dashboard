@@ -17,6 +17,6 @@
     "@sgd/eslint-config": "workspace:*",
     "@sgd/shared": "workspace:*",
     "@sgd/typescript-config": "workspace:*",
-    "wrangler": "^3.57.2"
+    "wrangler": "^3.114.17"
   }
 }
